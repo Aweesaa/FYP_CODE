@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+</head>
+
+<body>
+    <h1>EVENT DETAILS</h1>
+
+    <h2><%= applicantCount %> APPLICANTS</h2>
+
+    <% if (current_username) { %>
+        <% if (userDocument.userType == "volunteer") { %>
+            <form action="/apply" method="post">
+                <input type="hidden" name="eventId" value="<%= event._id %>">
+                <button type="submit">Apply for Event</button>
+            </form>
+        <% } else if (event.org_id == current_username && userDocument.userType == "organisation") { %>
+            <form action="/applicants" method="get">
+                <input type="hidden" name="eventId" value="<%= event._id %>">
+                <button type="submit">View Applicants</button>
+            </form>
+        <% } %>
+    <% } %>
+            
+    
+    <!-- Display event details -->
+    <h1><%= event.event_name %></h1>
+    <Strong>Date of Event:</Strong> <%= event.event_date %><br>
+    <Strong>Description:</Strong> <%= event.description %><br>
+    <Strong>Location:</Strong> <%= event.event_location %><br>
+    <Strong>Details:</Strong> <%= event.event_details %><br>
+    <img src="/images/<%= event.event_image.filename %>" alt="Event Image"><br>
+</body>
+
+</html>

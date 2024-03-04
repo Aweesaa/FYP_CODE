@@ -1,0 +1,6 @@
+[
+    {"event_name": "Elephant conservation program", "event_organiser": "Cadip", "image": "something.png", "location": "random location"},
+    {"event_name": "Event 2", "event_organiser": "Org 2", "image": "something2.png", "location": "random location 2"},
+    {"event_name": "Event 3", "event_organiser": "Org 3", "image": "something3.png", "location": "random location 3"}
+]
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Home</h1>
+    <h1>Logo</h1>
+
+    <% if (current_username) { %>
+    <!--IF ORG USER, DISPLAY ORG PROFILE. IF VOLUNTEER, DISPLAY VOLUNTEER PROFILE-->
+    <h1> <a href="/profile">Welcome, <%= current_username %>!</a> </h1>
+    <!--REMEMBER YOU NEED TO DO ROUTE FOR THIS AH-->
+    <a href="/logout">Log Out</a>
+    <% } else { %>
+        <p>No user logged in.</p>
+        <a href="/login">Login to an account</a>
+    <% } %>
+
+
+    <!-- Search bar -->
+    <form action="/search" method="GET">
+        <label for="search">Search for events:</label>
+        <input type="text" id="search" name="search" placeholder="Enter keywords">
+        <button type="submit">Search</button>
+    </form>
+
+    <!--YOU STILL NEED TO CHECK IF THERE IS A USER LOGGED IN HERE-->
+    <% if (current_username && userDocument.userType == "volunteer") { %>
+        <h2>RECOMMENDED EVENTS</h2>
+        <% if (recommendedEvents.length > 0) { %>
+        <ul>
+            <% recommendedEvents.forEach(event => { %>
+                <li>
+                    <a href="/events/<%= event._id %>">
+                        <strong><%= event.event_name %></strong> by <%= event.org_id %><br>
+                        Location: <%= event.event_location %><br>
+                        <img src="/images/<%= event.event_image.filename %>" alt="Event Image"><br>
+                    </a>
+                </li>
+            <% }); %>
+        </ul>
+        <% } else { %>
+            <p>You do not have any recommended events.</p>
+        <% } %>
+
+    <% } else if (current_username && userDocument.userType == "organisation") { %>
+    <% } else { %>
+        <p>Log in or create an account for personalised recommendations!</p>
+    <% } %>
+
+    <h2>Event List</h2>
+    <ul>
+        <% events.forEach(event => { %>
+            <li>
+                <a href="/events/<%= event._id %>">
+                    <strong><%= event.event_name %></strong> by <%= event.org_id %><br>
+                    Location: <%= event.event_location %><br>
+                    <img src="/images/<%= event.event_image.filename %>" alt="Event Image"><br>
+                </a>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>

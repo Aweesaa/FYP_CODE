@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchased Items</title>
+</head>
+
+<body>
+    <h1>YOUR PURCHASED ITEMS</h1>
+    <a href="/shop">Shop</a>
+
+    <% if (purchasedClothesDetails.length > 0) { %>
+        <ul>
+          <% purchasedClothesDetails.forEach(purchasedclothing => { %>
+            <li>
+                    <%= purchasedclothing.item_name %><br>
+                    <img src="/images/clothes/<%= purchasedclothing.item_image %>" alt="Image"><br>
+                    <%= purchasedclothing.item_description %><br>
+
+                    <% if (avatarDocument.equippeditems.includes(purchasedclothing.item_image)) { %>
+                        <!-- Display "Unequip" button and set up the correct route -->
+                        <form action="/unequip" method="post">
+                            <input type="hidden" name="itemId" value="<%= purchasedclothing._id %>">
+                            <button type="submit">Unequip Item</button>
+                        </form>
+                    <% } else { %>
+                        <!-- Display "Equip" button and set up the correct route -->
+                        <form action="/equip" method="post">
+                            <input type="hidden" name="itemId" value="<%= purchasedclothing._id %>">
+                            <button type="submit">Equip Item</button>
+                        </form>
+                    <% } %>
+                    
+            </li>
+          <% }); %>
+        </ul>
+      <% } else { %>
+        <p>You have not purchased any clothing pieces. Buy some?</p>
+      <% } %>
+
+    
+</body>
+
+</html>

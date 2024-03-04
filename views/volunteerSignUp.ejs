@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Sign Up</title>
+</head>
+
+<body>
+    <h1>Volunteer Sign Up</h1>
+    <form action="/volunteerSignUp" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required>
+        <br>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+        <br>
+        <label>Skills:</label>
+        <input type="checkbox" id="music" name="skills" value="music">
+        <label for="music">Music</label>
+
+        <input type="checkbox" id="animalcare" name="skills" value="animalcare">
+        <label for="animalcare">Animal Care</label>
+
+        <input type="checkbox" id="sportscoaching" name="skills" value="sportscoaching">
+        <label for="sportscoaching">Sports & Fitness Coaching</label>
+
+        <input type="checkbox" id="tutoring" name="skills" value="tutoring">
+        <label for="tutoring">Tutoring</label>
+
+        <input type="checkbox" id="disasterrelief" name="skills" value="disasterrelief">
+        <label for="disasterrelief">Disaster Relief</label>
+        <br>
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+
+</html>

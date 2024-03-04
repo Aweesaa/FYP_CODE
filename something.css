@@ -1,0 +1,392 @@
+/* Profile - Volunteer */
+
+body {
+position: relative;
+width: 1280px;
+height: 1200px;
+
+background: #FFFFFF;
+
+
+/* search */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 7px 246px;
+gap: 10px;
+
+position: absolute;
+width: 736px;
+height: 29px;
+left: calc(50% - 736px/2 - 77px);
+top: 176px;
+
+background: #FFFFFF;
+border: 1px solid #000000;
+
+
+/* Search */
+
+width: 40px;
+height: 15px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+/* identical to box height */
+text-align: center;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* profile */
+
+position: absolute;
+width: 148.53px;
+height: 57.04px;
+left: 953px;
+top: 159px;
+
+
+
+/* avatar */
+
+position: absolute;
+width: 57.04px;
+height: 57.04px;
+left: 953px;
+top: 159px;
+
+background: #D9D9D9;
+
+
+/* Welcome, username! */
+
+position: absolute;
+width: 81.99px;
+height: 35.65px;
+left: 1019.54px;
+top: 169.69px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+
+color: #000000;
+
+
+
+/* Line 1 */
+
+position: absolute;
+width: 1600px;
+height: 0px;
+left: 1140px;
+top: -45px;
+
+border: 1px solid #000000;
+transform: rotate(90deg);
+
+
+/* Line 2 */
+
+position: absolute;
+width: 1600px;
+height: 0px;
+left: 140px;
+top: -56px;
+
+border: 1px solid #000000;
+transform: rotate(90deg);
+
+
+/* Line 3 */
+
+position: absolute;
+width: 1600px;
+height: 0px;
+left: 801px;
+top: 0px;
+
+border: 1px solid #000000;
+transform: rotate(90deg);
+
+
+/* logo */
+
+position: absolute;
+width: 890px;
+height: 69px;
+left: 195px;
+top: 49px;
+
+
+
+/* logo portion */
+
+position: absolute;
+width: 890px;
+height: 69px;
+left: 195px;
+top: 49px;
+
+background: #EFEEEE;
+
+
+/* Logo */
+
+position: absolute;
+width: 212px;
+height: 38px;
+left: 534px;
+top: 70px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* avatar */
+
+position: absolute;
+width: 252px;
+height: 347px;
+left: 833px;
+top: 308px;
+
+background: #D9D9D9;
+
+
+/* Name - Equipped Badge */
+
+position: absolute;
+width: 147px;
+height: 18px;
+left: 885px;
+top: 668px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Rectangle 46 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 252px;
+height: 46px;
+left: 833px;
+top: 711px;
+
+background: #F6F4F4;
+border: 1px solid #000000;
+
+
+/* Style Avatar */
+
+position: absolute;
+width: 130px;
+height: 26px;
+left: 894px;
+top: 725px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Volunteered 0 hours */
+
+position: absolute;
+width: 97px;
+height: 68px;
+left: 830px;
+top: 791px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Badges */
+
+position: absolute;
+width: 97px;
+height: 34px;
+left: 833px;
+top: 927px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+
+color: #000000;
+
+
+
+/* 0 points */
+
+position: absolute;
+width: 84px;
+height: 37px;
+left: 1001px;
+top: 808px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Line 9 */
+
+position: absolute;
+width: 254px;
+height: 0px;
+left: 831px;
+top: 896px;
+
+border: 1px solid #000000;
+
+
+/* Rectangle 47 */
+
+position: absolute;
+width: 40px;
+height: 40px;
+left: 835px;
+top: 981px;
+
+background: #D9D9D9;
+
+
+/* Rectangle 50 */
+
+position: absolute;
+width: 40px;
+height: 40px;
+left: 975px;
+top: 981px;
+
+background: #D9D9D9;
+
+
+/* Rectangle 51 */
+
+position: absolute;
+width: 40px;
+height: 40px;
+left: 1045px;
+top: 981px;
+
+background: #D9D9D9;
+
+
+/* Rectangle 48 */
+
+position: absolute;
+width: 40px;
+height: 40px;
+left: 906px;
+top: 981px;
+
+background: #D9D9D9;
+
+
+/* Applied Events */
+
+position: absolute;
+width: 242px;
+height: 33px;
+left: 349px;
+top: 240px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Rectangle 52 */
+
+position: absolute;
+width: 576px;
+height: 119px;
+left: 195px;
+top: 308px;
+
+background: #D9D9D9;
+
+
+/* Rectangle 53 */
+
+position: absolute;
+width: 576px;
+height: 119px;
+left: 195px;
+top: 445px;
+
+background: #D9D9D9;
+
+
+/* Rectangle 54 */
+
+position: absolute;
+width: 576px;
+height: 119px;
+left: 198px;
+top: 582px;
+
+background: #D9D9D9;
+}

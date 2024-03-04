@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+</head>
+
+<body>
+    <h1>SHOP</h1>
+        <ul>
+          <% allClothing.forEach(clothing => { %>
+            <li><%= clothing.item_name %><br>
+                <img src="/images/clothes/<%= clothing.item_image %>" alt="Image"><br>
+                <%= clothing.item_description %><br>
+                <%= clothing.item_price %><br>
+                <!--BUY BUTTON-->
+                <form action="/buy" method="post">
+                    <!-- You can include hidden input fields with item details here -->
+                    <input type="hidden" name="itemId" value="<%= clothing._id %>">
+                    <button type="submit">Buy</button>
+                </form>
+            </li>
+            <!-- Add more properties as needed -->
+          <% }); %>
+        </ul>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organisation Profile</title>
+</head>
+
+<body>
+    <h1>ORGANISATION PROFILE -- <%= current_username %></h1>
+    <Strong>Email:</Strong> <%= userDocument.email %><br>
+    <Strong>Password:</Strong> <%= userDocument.password %><br>
+    <Strong>Organisation Name:</Strong> <%= orgDocument.org_name %><br>
+    <Strong>Address:</Strong> <%= orgDocument.address %><br>
+    <img src="/images/<%= orgDocument.logo_image.filename %>" alt="Logo Image"><br>
+
+    <h2>Your areas of focus: </h2>
+    <% if (orgDocument.aof.length > 0) { %>
+        <ul>
+            <% orgDocument.aof.forEach(aof => { %>
+                <li><%= aof %></li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>You didn't add any areas of focus.</p>
+    <% } %>
+
+
+    <h2>All created events: </h2>
+    <a href="/createEvent">Create a new event</a>
+
+    <% if (createdEvents.length > 0) { %>
+        <ul>
+          <% createdEvents.forEach(event => { %>
+            <li>
+                <a href="/events/<%= event._id %>">
+                    <h3><%= event.event_name %></h3>
+                </a>
+                    <%= event.event_date %><br>
+                    <%= event.event_location %><br>
+               <a href="/editEvent/<%= event._id %>">Edit Event</a>
+              <!-- Add more event details as needed -->
+            </li>
+          <% }); %>
+        </ul>
+      <% } else { %>
+        <p>No events available.</p>
+      <% } %>
+</body>
+
+</html>

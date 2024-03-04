@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicants</title>
+</head>
+
+<body>
+    <h1>ALL APPLICANTS</h1>
+    <% if (eventApplicants.length > 0) { %>
+        <ul>
+        <% eventApplicants.forEach(applicants => { %>
+            <li>
+                <Strong><%= applicants.volunteer_id %></Strong><br>
+                <form action="/updateApplicant" method="post">
+                    <input type="hidden" name="applicantId" value="<%= applicants.volunteer_id %>">
+                    <input type="hidden" name="eventId" value="<%= applicants.event_id %>">
+                    <label for="status">Status:</label>
+                    <select name="status" id="status">
+                        <option value="2" <% if (applicants.attendance_status === 2) { %>selected<% } %>>Pending</option>
+                        <option value="0" <% if (applicants.attendance_status === 0) { %>selected<% } %>>No-Show</option>
+                        <option value="1" <% if (applicants.attendance_status === 1) { %>selected<% } %>>Completed</option>
+                    </select><br>
+
+                Hours Worked: <input type="number" id="hoursworked" name="hoursworked" min="0" max="50" step="1" value="0"><br>
+                <button type="submit">Update</button>
+                </form>
+            </li>
+        <% }); %> 
+       </ul>
+    <% } else { %>
+        <p>There are no applicants for this event.</p>
+    <% } %>
+    
+</body>
+
+</html>

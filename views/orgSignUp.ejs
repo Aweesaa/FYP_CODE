@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organisation Sign Up</title>
+</head>
+
+<body>
+    <h1>Organisation Sign Up</h1>
+    <form action="/orgSignUp" method="post" enctype="multipart/form-data">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+        <br>
+        <label for="org_name">Organisation Name:</label>
+        <input type="text" id="org_name" name="org_name" required>
+        <br>
+        <label for="address">Organisation Address:</label>
+        <input type="text" id="address" name="address" required>
+        <br>
+        <label for="logo_image">Upload Logo Image:</label>
+        <input type="file" id="logo_image" name="logo_image" accept="image/*" required>
+        <br>
+        <label for="areas_of_focus">Areas of Focus:</label>
+        <input type="text" id="areas_of_focus" name="areas_of_focus" required>
+        <br>
+        <label>Areas of Focus:</label>
+        <input type="checkbox" id="artsandmusic" name="aof" value="artsandmusic">
+        <label for="artsandmusic">Arts & Music</label>
+
+        <input type="checkbox" id="animals" name="aof" value="animals">
+        <label for="animals">Animals</label>
+
+        <input type="checkbox" id="education" name="aof" value="education">
+        <label for="education">Education</label>
+
+        <input type="checkbox" id="sportsandrecreation" name="aof" value="sportsandrecreation">
+        <label for="sportsandrecreation">Sports And Recreation</label>
+
+        <input type="checkbox" id="disasterrelief" name="aof" value="disasterrelief">
+        <label for="disasterrelief">Disaster Relief</label>
+        <br>
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+
+</html>

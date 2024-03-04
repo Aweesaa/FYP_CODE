@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event</title>
+</head>
+
+<body>
+    <h1>Create Event</h1>
+    <form action="/createEvent" method="post" enctype="multipart/form-data">
+        <label for="event_name">Name of Event:</label>
+        <input type="text" id="event_name" name="event_name" required>
+        <br>
+        <label for="event_date">Date of Event:</label>
+        <input type="date" id="event_date" name="event_date" required>
+        <br>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required>
+        <br>
+        <label for="event_location">Location:</label>
+        <input type="text" id="event_location" name="event_location" required>
+        <br>
+        <label for="event_details">Details:</label>
+        <input type="text" id="event_details" name="event_details" required>
+        <br>
+        <label for="event_image">Upload an image for the event:</label>
+        <input type="file" id="event_image" name="event_image" accept="image/*" required>
+        <br>
+        <label>Areas of Focus:</label>
+        <% aofcheckboxes.forEach(checkbox => { %>
+            <input type="checkbox" name="aof" value="<%= checkbox.value %>">
+            <%= checkbox.label %>
+          <% }); %>
+
+        <button type="submit">Create Event</button>
+    </form>
+</body>
+
+</html>

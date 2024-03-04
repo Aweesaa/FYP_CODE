@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Profile</title>
+</head>
+
+<body>
+    <h1>VOLUNTEER PROFILE -- <%= current_username %></h1>
+    <a href="/shop">Shop</a>
+
+    <h2>PROFILE DETAILS</h2>
+    <h3>Skills:</h3>
+    <% if (volunteerDocument.skills.length > 0) { %>
+        <ul>
+            <% volunteerDocument.skills.forEach(skill => { %>
+                <li><%= skill %></li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>You didn't add any skills.</p>
+    <% } %>
+
+    <h3>TOTAL HOURS WORKED: <%= volunteerDocument.total_hours_worked %></h3>
+    <h3>POINTS: <%= volunteerDocument.points %></h3>
+
+    <h3>YOUR AVATAR (EQUIPPED CLOTHING HERE)</h3>
+    <% if (avatarDocument.equippeditems.length > 0) { %>
+        <ul>
+        <% avatarDocument.equippeditems.forEach(item => { %>
+            <li>
+                <img src="/images/avatars/hooman_<%= item %>" alt="Image"><br>
+            </li>
+        <% }); %> 
+       </ul>
+    <% } else { %>
+        <img src="/images/avatars/hooman_original.png" alt="Image"><br>
+    <% } %>
+
+
+    <a href="/purchasedItems">Purchased Clothing</a>
+
+    <h2>ALL APPLICATIONS</h2>
+    <% if (applicationDetails.length > 0) { %>
+        <ul>
+        <% applicationDetails.forEach(application => { %>
+            <li>
+                <a href="/events/<%= application.event_id %>">
+                    <%= application.event_name %><br>
+                </a>
+                    <%= application.org_id %><br>
+                    <%= application.event_location %><br>
+            </li>
+        <% }); %> 
+       </ul>
+    <% } else { %>
+        <p>You have not applied for any events.</p>
+    <% } %>
+</body>
+
+</html>
