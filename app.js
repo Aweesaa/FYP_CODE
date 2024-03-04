@@ -26,7 +26,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 const randomKey = crypto.randomBytes(32).toString('hex');
-const uri = 'mongodb+srv://alyssachang1408:F8niS150UA6jE3Ha@cluster0.afrdfh3.mongodb.net/testDatabase';
+const uri = 'yourDatabaseURI';
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
